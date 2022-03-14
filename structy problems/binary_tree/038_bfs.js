@@ -1,15 +1,24 @@
-const depthFirstValues = (root) => {
-    const values = [];
+// class Node {
+//   constructor(val) {
+//     this.val = val;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
+
+const breadthFirstValues = (root) => {
     if(!root) return [];
-    const stack = [root];
+    const queue = [root];
+    const vals = [];
 
-
-    while(stack.length > 0){
-    const current = stack.pop();
-    values.push(current.val);
-    if(current.right) stack.push(current.right);
-    if(current.left) stack.push(current.left);
+while(queue.length > 0) {
+    const current = queue.shift();
+    vals.push(current.val);
+    if(current.left) queue.push(current.left);
+    if(current.right) queue.push(current.right);
     
-    }
-    return values;
+}
+
+return vals
+
 };
