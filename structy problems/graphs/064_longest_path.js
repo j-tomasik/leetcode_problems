@@ -2,7 +2,7 @@ const longestPath = (graph) => {
  const distances = {};
   
   for(let node in graph) {
-    if(graph[node].length ===0){
+    if(graph[node].length === 0){
       distances[node] = 0;
     } 
   }
