@@ -22,5 +22,9 @@ const segregate = (arr) => {
         }
     }
 
-    
+    return arr;
 }
+
+let test = [12, 34, 45, 9, 8, 90, 3];
+
+console.log(segregate(test));
