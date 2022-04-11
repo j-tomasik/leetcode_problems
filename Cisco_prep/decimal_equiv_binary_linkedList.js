@@ -1,16 +1,9 @@
-class Node {
-    constructor() {
-        this.data = true;
-        this.next = null;
+var getDecimalValue = function(head) {
+    let result = 0
+    
+    while (head) {
+        result = result * 2 + head.val
+        head = head.next
     }
-}
-
-const decimalValue = (head) => {
-    let result = 0;
-
-    while (head !== null) {
-        result = (result << 1) + (head.data ? 1 : 0);
-        head = head.next;
-    }
-    return result;
-}
+    return result
+};
