@@ -14,7 +14,7 @@ const confirm = (matrix) => {
     
   for(let i = 0; i < matrix.length; i++) {
     let stepCount = matrix[i][0] - matrix[i][1];
-    console.log(stepCount);
+    
     for(let j = 0; j < matrix[0].length - 1; j++) {
       let current = matrix[i][j];
       let next = matrix[i][j + 1];
@@ -22,10 +22,23 @@ const confirm = (matrix) => {
       if(stepCount !== diff) {
         return false;
       }
-      
-      
     }
   }
+
+  for(let i = 0; i < matrix.length; i++) {
+    let stepCount = matrix[0][i] - matrix[1][i];
+    
+    for(let j = 0; j < matrix[0].length - 1; j++) {
+      let current = matrix[j][i];
+      let next = matrix[j + 1][i];
+      let diff = current - next;
+      if(stepCount !== diff) {
+        return false;
+      }
+    }
+  }
+
+  
 
   return true;
 }
