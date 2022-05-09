@@ -17,3 +17,6 @@ const findPairsWithGivenDif = (arr, k) => {
 
     return answer;
 }
+
+//in hashmap, keys are the compliment num needed to reach k, and vals are the number in the arr
+//second for loop will check to see if num in arr is a key, and then that num and the val to the key are pushed
