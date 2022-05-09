@@ -24,3 +24,7 @@ function sudokuSolve(board) {
     
   }
 }
+
+//the sudoku isnt solvable only if the exising numbers break one of the rules
+//so all I have to do is make a set for each row, each col and each sub box,
+//check if it's unique, then add it in
