@@ -4,11 +4,11 @@ const findPairsWithGivenDif = (arr, k) => {
     let map = {};
     let answer = [];
 
-    for(val of arr) {
+    for(let val of arr) {
         map[val - k] = val;
     }
 
-    for(num of arr) {
+    for(let num of arr) {
         if(num in map) {
             answer.push([map[num], num])
         }
