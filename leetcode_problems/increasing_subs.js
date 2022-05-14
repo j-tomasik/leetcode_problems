@@ -25,3 +25,4 @@ let test = [9,4,5,6,7,8,1];
 countIncreasingSubs(test, 3);
 
 //this did not work in the hackerRank
+//need to look into two pointer method for sloving ranges while iteratin an arr
