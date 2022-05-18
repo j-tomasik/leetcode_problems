@@ -5,13 +5,14 @@
 const countIncreasingSubs = (arr, k) => {
     let count = 0;
 
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 1; j < k; j++) {
-            if(!(arr[i] < arr[i + j])) {
+    for(let i = 0; i < arr.length - k; i++) {
+
+        for(let j = i + 1; j < i + k; j++) {
+            if(!(arr[i] < arr[j])) {
                 break;
             } 
 
-            if(arr[i] < arr[i + j] && (j + 1) === k) {
+            if(arr[i] < arr[j] && (j + 1) === k + i) {
                 count += 1;
             }
         
@@ -19,6 +20,9 @@ const countIncreasingSubs = (arr, k) => {
     }
     console.log(count);
 }
+//i 0 1
+//j 0 2
+//count 0
 
 let test = [9,4,5,6,7,8,1];
 
