@@ -1,7 +1,8 @@
 //make sure arr is sorted
 
 const twoSum = (arr, sum) => {
-    
+    arr.sort(function(a,b){return a - b})
+
     let p1 = 0;
     let p2 = arr.length - 1;
 
