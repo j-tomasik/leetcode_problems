@@ -8,30 +8,33 @@
 //   it would have to be put into another container
 
 const weightedBags = (str) => {
-    let result = '';
+    let result = [];
     let stack = [];
     let numsArr = str.split(',');
 
     let weight = 0;
     let bag = [];
-    for(let num of numsArr) {
-        
+    for(let char of numsArr) {
+        let num = Number(char);
         if((weight + num) <= 40) {
             bag.push(num);
             weight += num;
         } else {
-            stack.push(...bag);
+            stack.push(bag);
             bag = [num];
         }
     }
     stack.push(bag);
 
-    // while(stack.length > 0) {
-    //     let lastNum = stack.pop();
-    //     result += String(lastNum);
-    // }
-    // return result;
-    return stack;
+    while(stack.length > 0) {
+        let lastArr = stack.pop();
+        result.push(...lastArr)
+        // let nowChar = String(lastArr);
+        // result += nowChar;
+    }
+    
+    return result.join(',');
+    
 }
 let example = '30, 5, 6';
 console.log(weightedBags(example));
