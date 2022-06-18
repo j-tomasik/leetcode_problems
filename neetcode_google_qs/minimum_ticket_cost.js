@@ -1,15 +1,8 @@
-const minimumCost = (days, costs, memo={}, i=0) => {
+const minimumCost = (days, costs) => {
     //recursive dfs branching
     //memoize/cache to reduce duplicate logic
-    if(i in memo) return memo[i];
-    if (i === days.length) return 0;
+    const costs = [1, 7, 30];
+    const memo = new Map();
 
-    memo[i] = Infinity;
-    let passes = [1, 7, 30];
-
-    for(let day of days) {
-        for(cost of costs) {
-
-        }
-    }
+    
 }
