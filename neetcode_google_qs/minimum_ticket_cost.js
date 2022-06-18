@@ -1,0 +1,3 @@
+const minimumCost = (days, costs) => {
+
+}
