@@ -15,5 +15,7 @@ const minimumCost = (days, costs) => {
 
         const min = Math.min(buy1, buy7, buy30);
         memo.set(curr, min);
+        return min;
     }
-}
+    return recursive(0, 0);
+};
