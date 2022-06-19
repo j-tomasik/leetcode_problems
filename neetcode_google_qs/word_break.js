@@ -8,5 +8,12 @@ const wordBreak = (s, wordDict) => {
         if(idx === length) {
             return true;
         }
+
+        for(let i = idx + 1; i <= length; i++) {
+            let word = s.substring(i, idx);
+            
+        }
+
+
     }
 }
