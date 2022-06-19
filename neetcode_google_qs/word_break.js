@@ -11,9 +11,14 @@ const wordBreak = (s, wordDict) => {
 
         for(let i = idx + 1; i <= length; i++) {
             let word = s.substring(i, idx);
-            
+            if(wordDict.includes(word) && mem[idx]) {
+                if(dfs(i)) {
+                    return true;
+                }
+            }
         }
-
+        mem[idx] = false;
+        return false;
 
     }
 }
