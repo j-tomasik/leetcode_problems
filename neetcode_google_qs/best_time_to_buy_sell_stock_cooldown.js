@@ -1,0 +1,1 @@
+//this problem I would guess uses two pointers to traverse the array 
