@@ -1,4 +1,5 @@
-
+//runs in O(n^2) in worst case
+//but is faster for small inputs or for checking if something is already sorted
 const insertionSort = (inputArr) => {
     let n = inputArr.length;
         for (let i = 1; i < n; i++) {
