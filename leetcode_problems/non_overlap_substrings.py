@@ -30,4 +30,4 @@ print(substrings('I like cheese', 'like'))
 
 print(substrings('mat', 'bat fat'))
 
-print(substrings('bear scare', 'bodega'))
+print(substrings('bear scare', 'bodega bear scare'))
