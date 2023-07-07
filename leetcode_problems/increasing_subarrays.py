@@ -3,9 +3,14 @@
 
 def count_increasing_subarrays(arr):
     count = 0
-    for i in range(len(arr) - 1):
+    subarray_length = 2  # Minimum length of subarray
+    for i in range(len(arr) - subarray_length + 1):
         if arr[i] < arr[i + 1]:
             count += 1
+            for j in range(i + 1, len(arr) - 1):
+                if arr[j] >= arr[j + 1]:
+                    break
+                count += 1
     return count
 
 
