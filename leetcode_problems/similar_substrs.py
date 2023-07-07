@@ -27,9 +27,9 @@ def similar(str1, str2):
         if char in hash:
             hash[char] -= 1
         else:
-            hash[char] = 1
+            hash[char] = -1
     values = hash.values()
-    maximum = max(values)
+    maximum = max(abs(num) for num in values)
     if maximum <= 3:
         return True
     else:
