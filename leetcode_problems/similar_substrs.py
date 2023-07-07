@@ -30,7 +30,7 @@ def similar(str1, str2):
             hash[char] = 1
     values = hash.values()
     maximum = max(values)
-    if max <= 3:
+    if maximum <= 3:
         return True
     else:
         return False
