@@ -11,3 +11,23 @@
 #split s into list of words
 #iterate through list, if set.has is false, add to return list
 
+def substrings(s, t):
+    return_list = []
+    
+    t_list = t.split()
+    t_set = set(t_list)
+    
+    s_list = s.split()
+    
+    for word in s_list:
+        if not t_set.has(word):
+            return_list.append(word)
+    
+    return return_list
+
+
+print(substrings('I like cheese', 'like'))
+
+print(substrings('mat', 'bat fat'))
+
+print(substrings('bear scare', 'bodega'))
