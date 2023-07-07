@@ -20,7 +20,7 @@ def substrings(s, t):
     s_list = s.split()
     
     for word in s_list:
-        if not t_set.has(word):
+        if not word in t_set:
             return_list.append(word)
     
     return return_list
