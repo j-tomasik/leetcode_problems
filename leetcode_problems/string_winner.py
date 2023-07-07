@@ -1,4 +1,4 @@
-##given s astring such as 'wwwbbbbwww' return the winner
+##given s astring such as 'wwwbbbwww' return the winner
 #w always goes first, you can only remove a char if it is surrounded by the same
 #if you cannot remove your char on your turn the other player wins
 
@@ -11,7 +11,7 @@
 #2 -> w wins 'wwwwbb'
 #3 -> w wins 'wwwwwwbb'
 
-def string_winnder(str):
+def string_winner(str):
     count = 0
     
     for i, char in enumerate(str):
@@ -30,3 +30,10 @@ def string_winnder(str):
     else:
         return 'w'
     
+
+print(string_winner('wwwbbbwww'))
+
+print(string_winner('bbbwwwbbb'))
+
+print(string_winner(''))
+
