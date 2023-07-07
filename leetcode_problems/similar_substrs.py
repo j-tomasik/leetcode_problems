@@ -27,9 +27,9 @@ def similar(str1, str2):
         if char in hash:
             hash[char] -= 1
         else:
-            hash[char] += 1
+            hash[char] = 1
     values = hash.values()
-    max = max(values)
+    maximum = max(values)
     if max <= 3:
         return True
     else:
@@ -37,3 +37,4 @@ def similar(str1, str2):
     
 matrix = [ ['cat', 'mat'], ['walrus', 'bicycle'], ['eeet'  ,'taaa']  ]
 
+print(compare_strs(matrix))
