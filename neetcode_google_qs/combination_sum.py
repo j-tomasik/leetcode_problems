@@ -5,5 +5,8 @@ def combinationSum(candidates, target):
         if sum == target:
             res.append(cur.copy())
             return
-        if i >= len(candidates) or total > target:
+        if i >= len(candidates) or sum > target:
             return
+        
+        cur.append(candidates[i])
+        dfs(i, cur, sum + candidates[i])
