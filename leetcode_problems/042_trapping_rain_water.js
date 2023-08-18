@@ -36,3 +36,5 @@ if (height === null) return 0;
     
     // do the same thing going from right to left for rightMax
     // iterate through one more time to calculate running total for water
+
+    
