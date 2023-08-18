@@ -10,3 +10,7 @@ def combinationSum(candidates, target):
         
         cur.append(candidates[i])
         dfs(i, cur, sum + candidates[i])
+        cur.pop()
+        dfs(i+1, cur, sum)
+    dfs(0,[],0)
+    return res
