@@ -5,3 +5,8 @@ def search(nums, target):
         m = l + ((r - l) // 2)
         if nums[m] > target:
             r = m - 1
+        elif nums[m] < target:
+            l = m + 1
+        else:
+            return m
+    return -1
