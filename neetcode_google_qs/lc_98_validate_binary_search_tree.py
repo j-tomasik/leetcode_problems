@@ -4,6 +4,7 @@
 #O2(n) time complexity
 ##use helper func that is recursive
 
+
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         
@@ -12,3 +13,8 @@ class Solution:
                 return True
             if not (node.val < right and node.val > left):
                 return False
+            
+            return valid(node.left, left, node.val) and valid(node.right, node.val, right)
+        
+        
+        return valid(root, float('-inf'), float('inf')) 
