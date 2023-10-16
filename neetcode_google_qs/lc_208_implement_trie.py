@@ -38,4 +38,11 @@ class Trie:
         return cur.endOfWord
         
     def StartsWith(self, prefix):
-        ""
+        cur = self.root
+
+        for char in prefix:
+            if char not in cur.children:
+                return False
+            cur = cur.children[char]
+        return True
+        
