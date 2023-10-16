@@ -4,3 +4,11 @@
 #O2(n) time complexity
 ##use helper func that is recursive
 
+class Solution:
+    def isValidBST(self, root: TreeNode) -> bool:
+        
+        def valid(node, left, right):
+            if not node:
+                return True
+            if not (node.val < right and node.val > left):
+                return False
