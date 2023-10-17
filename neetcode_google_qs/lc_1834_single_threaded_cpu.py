@@ -3,3 +3,10 @@
 ##when adding to the min heap, add in original idx to add to return list
 ##in the min heap rank the tasks by the time it takes to complete
 
+class Solution:
+    def getOrder(self, tasks):
+        for i, t in enumerate(tasks):
+            t.append(i)
+        
+        
+        tasks.sort(key = lambda t : t[0])
