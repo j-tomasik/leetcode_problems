@@ -11,7 +11,7 @@ def betterCompress(s):
             char = s[i]
             
             if j == len(s) - 1:
-                num = int(s[j])
+                num = int(s[i+1:j+1])
             else:
                 num = int(s[i+1:j])
         hash[char] += num
@@ -23,4 +23,5 @@ def betterCompress(s):
     for key in sortedDict:
         char = key 
         strNum = str(sortedDict[key])
-        
+        finalStr += char + strNum
+    return finalStr
