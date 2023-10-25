@@ -16,3 +16,11 @@ def betterCompress(s):
                 num = int(s[i+1:j])
         hash[char] += num
         
+    finalStr = ''
+    myKeys = list(hash.keys())
+    myKeys.sort()
+    sortedDict = {i: hash[i] for i in myKeys}
+    for key in sortedDict:
+        char = key 
+        strNum = str(sortedDict[key])
+        
