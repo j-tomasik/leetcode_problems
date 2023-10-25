@@ -10,4 +10,9 @@ def betterCompress(s):
         else:
             char = s[i]
             
-            
+            if j == len(s) - 1:
+                num = int(s[j])
+            else:
+                num = int(s[i+1:j])
+        hash[char] += num
+        
