@@ -4,14 +4,16 @@ from ast import List
 
 class Solution:
     def canJump(self, nums: List[int]):
-        
+        goal = len(nums) - 1
+        #to make a backwards for loop in python, (startIdx, exclusive endpoint, incrementation)
+        for i in range(len(nums) - 1, -1, -1):
 
 
 
 
 
 
-
+#this was timing out bc the recusion was going to deep in the stack and not hiting a false
 # class Solution(object):
 #     def canJump(self, nums):
 #         def recursive(nums, idx):
