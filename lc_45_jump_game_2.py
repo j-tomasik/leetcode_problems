@@ -16,4 +16,8 @@ class Solution:
             
         return res
         
-        
+#given an array of integers, return the count of non-overlapping pairs that have the same sum
+#[0,1,2,2,1,3,4,0]  --> 3
+#pairs are (2,2), (1,3), (4,0)
+#[1,2,1,1,2] --> 2
+#pairs are (2,1), (1,2)
