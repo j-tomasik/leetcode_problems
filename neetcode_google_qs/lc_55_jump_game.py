@@ -7,6 +7,10 @@ class Solution:
         goal = len(nums) - 1
         #to make a backwards for loop in python, (startIdx, exclusive endpoint, incrementation)
         for i in range(len(nums) - 1, -1, -1):
+            if i + nums[i] >= goal:
+                goal = i
+        
+        return True if goal == 0 else False
 
 
 
