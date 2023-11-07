@@ -3,3 +3,12 @@ def spiralOrder(matrix):
     res = []
     left, right = 0, len(matrix[0])
     top, bottom = 0, len(matrix)
+    
+    while left < right and top < bottom:
+        #get every val in top row
+        for i in range(left, right):
+            res.append(matrix[top][i])
+        top += 1
+        
+        
+        
