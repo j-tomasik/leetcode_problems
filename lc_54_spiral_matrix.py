@@ -11,4 +11,10 @@ def spiralOrder(matrix):
         top += 1
         
         
+        #get every i in the right col
+        for i in range(top, bottom):
+            res.append(matrix[i][right - 1])
+            
+        right -= 1
+        
         
