@@ -20,10 +20,15 @@ def spiralOrder(matrix):
         if not (left < right and top < bottom):
             break
         
+        #get every i in the bottom row
         for i in range(right -1, left - 1, -1):
             res.append(matrix[bottom - 1][i])
             
         bottom -= 1
         
         #get every i in the left col
+        for i in range(bottom - 1,top - 1, -1):
+            res.append(matrix[i][left])
+            
+        left += 1
         
