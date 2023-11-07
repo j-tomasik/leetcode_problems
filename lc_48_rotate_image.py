@@ -6,15 +6,16 @@ def rotate(matrix):
             top, bottom = l, r
             
             #save the topleft
-            topLeft = matrix[top][l]
+            topLeft = matrix[top][l + i]
             
             #move bottom left into top left
-            matrix[top][l] = matrix[bottom][l]
+            matrix[top][l + i] = matrix[bottom - i][l]
             
             #move bottom right into bottom left
-            matrix[bottom][l] = matrix[bottom][r]
+            matrix[bottom - i][l] = matrix[bottom][r]
             
             #move top right into bottom right
-            matrix[bottom][r] = matrix[top][r]
+            matrix[bottom][r] = matrix[top][r - i]
             
-            
+            #move top left into top right
+            matrix[top][r] = topLeft
