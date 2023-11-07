@@ -17,4 +17,13 @@ def spiralOrder(matrix):
             
         right -= 1
         
+        if not (left < right and top < bottom):
+            break
+        
+        for i in range(right -1, left - 1, -1):
+            res.append(matrix[bottom - 1][i])
+            
+        bottom -= 1
+        
+        #get every i in the left col
         
