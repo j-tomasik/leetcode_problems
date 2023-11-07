@@ -12,10 +12,14 @@ def rotate(matrix):
             matrix[top][l + i] = matrix[bottom - i][l]
             
             #move bottom right into bottom left
-            matrix[bottom - i][l] = matrix[bottom][r]
+            matrix[bottom - i][l] = matrix[bottom][r - i]
             
             #move top right into bottom right
-            matrix[bottom][r] = matrix[top][r - i]
+            matrix[bottom][r - i] = matrix[top + i][r]
             
             #move top left into top right
-            matrix[top][r] = topLeft
+            matrix[top + i][r] = topLeft
+        
+        r -= 1
+        l += 1
+        
