@@ -1,3 +1,5 @@
+import heapq
+
 def isNStraightHand(hand, groupSize):
     if len(hand) % groupSize:
         return False
@@ -8,3 +10,12 @@ def isNStraightHand(hand, groupSize):
         
     minH = list(count.keys())
     heapq.heapify(minH)
+    while minH:
+        first = minH[0]
+        
+        for i in range(first, first + groupSize):
+            if i not in count:
+                return False
+            count[i] -= 1
+            if count[i] = 0:
+                if 
