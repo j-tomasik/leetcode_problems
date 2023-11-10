@@ -11,8 +11,6 @@ def QuestionMarks(str):
                 b = 'true'
             c = 0
             a = int(char)
-        elif i == '?':
+        elif char == '?':
             c += 1
-    
-    
     return b
