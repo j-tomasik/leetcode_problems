@@ -8,5 +8,8 @@ def validInput(strParam):
     if strParam[len(strParam)-1] == '_':
         return False
     
+    for char in strParam:
+        if not char.isdigit() and not char.isalpha() and char != '_':
+            return False
     
     return True
