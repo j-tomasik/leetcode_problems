@@ -3,7 +3,16 @@ def QuestionMarks(str):
     b = 'false'
     c = 0
     
-    
+    for char in str:
+        if char.isdigit():
+            if int(char) + a == 10:
+                if c != 3:
+                    return 'false'
+                b = 'true'
+            c = 0
+            a = int(char)
+        elif i == '?':
+            c += 1
     
     
     return b
