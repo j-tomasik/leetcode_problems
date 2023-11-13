@@ -3,4 +3,7 @@ def first_reverse(strParam):
     charsList = [*strParam]
     #reverse works like .sort() in python, does it in place
     charsList.reverse()
-    return strParam
+    
+    joined = ''.join(charsList)
+    
+    return joined
