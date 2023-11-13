@@ -11,5 +11,10 @@ def LongestWord(sen):
             if word[i].lower() in alpha:
                 currCount += 1
                 i += 1
-    
+                if currCount > longestCount:
+                    longestCount = currCount
+                    longest = word
+            else:
+                break
+                
     return str(longest)
