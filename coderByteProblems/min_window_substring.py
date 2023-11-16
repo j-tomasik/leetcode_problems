@@ -12,3 +12,6 @@ def MinWindowSubstring(StrArr):
         curr = Counter()
         for j in range(i, len(first)):
             curr[first[j]] += 1
+            
+            if frequencySecond - curr == EMPTY_COUNTER:
+                options.append(first[i:j+1])
