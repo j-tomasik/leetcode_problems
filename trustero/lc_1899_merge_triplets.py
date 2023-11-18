@@ -6,3 +6,5 @@ def mergeTriplets(triplets, target):
             continue
         
         for i, num in enumerate(t):
+            if num == target[i]:
+                good.add(i)
