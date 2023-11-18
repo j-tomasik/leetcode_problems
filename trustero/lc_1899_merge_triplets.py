@@ -8,3 +8,5 @@ def mergeTriplets(triplets, target):
         for i, num in enumerate(t):
             if num == target[i]:
                 good.add(i)
+                
+    return len(good) == 3
