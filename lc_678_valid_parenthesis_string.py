@@ -3,11 +3,11 @@ def checkValidString(s):
     
     for char in s:
         if char == '(':
-            lefMin, leftMx = lefMin + 1, leftMax + 1
+            lefMin, leftMax = leftMin + 1, leftMax + 1
         elif char == ')':
             leftMin, leftMax = leftMin -1, leftMax - 1
         else:
-            lefMin, leftMax = leftMin - 1, leftMax + 1
+            leftMin, leftMax = leftMin - 1, leftMax + 1
     
         if leftMax < 0:
             return False
