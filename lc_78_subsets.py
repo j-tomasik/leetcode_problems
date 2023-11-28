@@ -3,6 +3,7 @@ def subsets(nums):
     
     cur = []
     def dfs(i):
+        #base case
         if i >= len(nums):
             res.append(cur.copy())
             return
@@ -13,3 +14,7 @@ def subsets(nums):
         
         #decision to NOT include nums[i]
         cur.pop()
+        dfs(i + 1)
+    
+    dfs(0)
+    return res
