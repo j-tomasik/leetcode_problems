@@ -13,5 +13,6 @@ def susetsWithDup(nums):
         
         while i + 1 < len(nums) and nums[i] == nums[i+1]:
             i += 1
+        backtrack(i + 1, subset)
     
     return res
