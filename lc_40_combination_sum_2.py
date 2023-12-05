@@ -14,9 +14,10 @@ def combinationSum(candidates, target):
             if candidates[i] == prev:
                 continue
             cur.append(candidates[i])
+            backtracking(cur, pos + 1, target - candidates[i])
             cur.pop()
-            backtracking(cur, pos, target - candidates[i])
+            prev = candidates[i]
     
-    
+    backtracking([], 0, target)
     
     return res
