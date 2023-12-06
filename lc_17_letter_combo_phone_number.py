@@ -1,6 +1,6 @@
 def letterCombinations(digits):
     res = []
-    digits = {
+    digitToChar = {
         '2': 'abc',
         '3': 'def',
         '4': 'ghi',
@@ -16,6 +16,10 @@ def letterCombinations(digits):
             res.append(curStr)
             return
         
-        
+        for c in digitToChar[digits[i]]:
+            backtrack(i+1, curStr + c)
+    
+    if digits:
+        backtrack(0, '')
     
     return res
