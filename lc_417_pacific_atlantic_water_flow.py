@@ -29,6 +29,7 @@ def pacificAtlantic(heights):
     res = []
     for r in range(ROWS):
         for c in range(COLS):
-            
+            if (r,c) in pac and (r,c) in atl:
+                res.apppend([r,c])
     
     return res
