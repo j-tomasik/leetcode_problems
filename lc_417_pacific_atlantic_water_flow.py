@@ -12,7 +12,11 @@ def pacificAtlantic(heights):
             or heights[r][c] < prevHeight
         ):
             return
-        
+        visit.add((r,c))
+        dfs(r+1, c, visit, heights[r][c])
+        dfs(r-1, c, visit, heights[r][c])
+        dfs(r, c + 1, visit, heights[r][c])
+        dfs(r, c - 1, visit, heights[r][c])
     res = []
     
     return res
