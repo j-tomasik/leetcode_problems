@@ -29,7 +29,7 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/68616e"
+          ""
         );
         //converts response promise to a string
         const data = await response.text();
@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello Ramp!</h1>
+      <h1>Hello!</h1>
       <h2>{fetchedData}</h2>
     </div>
   );
