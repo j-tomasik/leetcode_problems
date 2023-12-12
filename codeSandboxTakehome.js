@@ -1,70 +1,43 @@
+import "./styles.css";
 import React, { useState, useEffect } from 'react';
 
-const Typewriter = ({ text }) => {
-    const [displayedText, setDisplayedText] = useState('');
+export default function App() {
+  const [fetchedData, setFetchedData] = useState('Loading...');
 
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= text.length) {
-        setDisplayedText(text.substring(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 500); // Adjust the delay here (in milliseconds)
-
-    return () => {
-      clearInterval(interval);
+  const addListItemsWithDelay = (inputStr) => {
+    const newList = []
+    
+    for (let i = 0; i < inputStr.length; i++) {
+      setTimeout(() => {
+        newList.push(<li key={i}>{inputStr[i]}</li>)
+        setFetchedData([...newList])
+      }, 1000 * 1);
     };
-  }, [text]);
-
-  return (
-    <div>
-      <ul></ul>
-      
-    </div>
-  );
-};
-
-const URLFetcher = () => {
-  const [fetchedData, setFetchedData] = useState('');
+  };
 
   useEffect(() => {
     // Function to fetch the URL data
     const fetchData = async () => {
       try {
-        const response = await fetch('https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/68616e'); // Replace 'YOUR_URL_HERE' with the fetched URL
+        const response = await fetch('https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/68616e'); 
         const data = await response.text();
-        setFetchedData(data);
+        
+        addListItemsWithDelay(data)
       } catch (error) {
         console.error('Error fetching data:', error);
         setFetchedData('Error fetching data');
       }
     };
 
-    fetchData(); // Call the function to fetch data when the component mounts
-  }, []); // Empty dependency array ensures this effect runs only once
+    fetchData(); 
+  }, []);
 
+
+ 
   return (
-    <div>
-      <ul></ul>
-      <p><Typewriter text={fetchedData} /></p>
+    <div className="App">
+      <h1>Hello Ramp!</h1>
+      <h2>{fetchedData}</h2>
     </div>
   );
-};
-
-
-
-
-const App = () => {
-  const textToDisplay = 'Loading...';
-
-  return (
-    <div>
-      <Typewriter text={textToDisplay} />
-    </div>
-  );
-};
-
-export default App;
+}
