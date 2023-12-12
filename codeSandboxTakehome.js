@@ -21,8 +21,8 @@ const Typewriter = ({ text }) => {
 
   return (
     <div>
-      <h1>Typewriter Effect</h1>
-      <p>{displayedText}</p>
+      <ul></ul>
+      
     </div>
   );
 };
@@ -34,7 +34,7 @@ const URLFetcher = () => {
     // Function to fetch the URL data
     const fetchData = async () => {
       try {
-        const response = await fetch('YOUR_URL_HERE'); // Replace 'YOUR_URL_HERE' with the fetched URL
+        const response = await fetch('https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/68616e'); // Replace 'YOUR_URL_HERE' with the fetched URL
         const data = await response.text();
         setFetchedData(data);
       } catch (error) {
@@ -49,7 +49,7 @@ const URLFetcher = () => {
   return (
     <div>
       <ul></ul>
-      <p>{fetchedData}</p>
+      <p><Typewriter text={fetchedData} /></p>
     </div>
   );
 };
