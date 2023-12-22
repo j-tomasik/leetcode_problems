@@ -9,5 +9,10 @@ def searchMatrix(matrix, target):
         elif target < matrix[row][0]:
             bot = row - 1
         else: break
+        
+    if not (top <= bot):
+        return False
+    row = (top + bot) // 2
+    
     
     return False
