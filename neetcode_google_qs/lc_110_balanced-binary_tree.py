@@ -8,4 +8,4 @@ class Solution:
         leftHeight, rightHeight = self.Height(root.left), self.Height(root.right)
         
         if leftHeight < 0 or rightHeight < 0 or abs(leftHeight - rightHeight) > 1: return -1
-        
+        return max(leftHeight, rightHeight) + 1
