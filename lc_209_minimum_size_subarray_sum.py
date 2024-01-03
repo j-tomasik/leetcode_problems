@@ -8,7 +8,9 @@ def minSubArrayLen(target, nums):
         currSum += nums[r]
         
         while currSum >= target:
-            
+            minLength = min(minLength, (r - l + 1))
+            currSum -= nums[l]
+            l += 1
     
     
     if minLength == float('inf'):
