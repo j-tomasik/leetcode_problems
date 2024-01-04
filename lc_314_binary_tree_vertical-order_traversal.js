@@ -17,7 +17,9 @@ var verticalOrder = function(root) {
             queue.push([node.right, level + 1])
         }
     }
-    const levels = Object.entries(map).sort((a, b) => a[0]-b[0])
+    //left has negative vals, right has positive
+    //sorts by this order
+    const levels = Object.entries(map).sort((a, b) => a[0]- b[0])
     levels.forEach(x => res.push(x[1]))
     return res;
 }
