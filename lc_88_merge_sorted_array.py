@@ -8,4 +8,8 @@ def merge(nums1, m, nums2, n):
             nums1[write_idx] = nums1[pointer1]
             pointer1 -= 1
         else:
-            
+            nums1[write_idx] = nums2[pointer2]
+            b -= 1
+        
+        write_idx -= 1
+        
