@@ -7,3 +7,14 @@ from collections import deque
 def zigzagLevelOrder(root):
     res = []
     q = deque([root] if root else [])
+    
+    while q:
+        level = []
+        for i in range(len(q)):
+            node = q.popleft()
+            level.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        res.append(level)
