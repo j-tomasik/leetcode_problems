@@ -13,6 +13,7 @@ def treeLevels(root):
                 q.append(curr.left)
             if curr.right:
                 q.append(curr.right)
-            
+        if level:
+            res.append(level)
             
     return res
