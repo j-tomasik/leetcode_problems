@@ -17,4 +17,5 @@ def zigzagLevelOrder(root):
                 q.append(node.left)
             if node.right:
                 q.append(node.right)
+        level = reversed(level) if len(res) % 2 else level
         res.append(level)
