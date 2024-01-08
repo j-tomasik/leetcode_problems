@@ -5,7 +5,7 @@
 #when you need to pop or peek and whats in the front of the queue, shift items 
 #using a while loop, removing fron the end of input to put in the bottom/front of output
 #this will leave the last item in output as the first from input for popping or [-1] idxing
-
+#"its like pouring sand from an hour glass to the other side"
 
 
 ##If you can use collections and deque, this works
