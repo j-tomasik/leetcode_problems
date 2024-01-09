@@ -1,5 +1,7 @@
 import math
 
+def isBadVersion(n):
+    return math.random()
 
 def firstBadVersion(n):
     if n == 1:
@@ -17,3 +19,6 @@ def firstBadVersion(n):
             else:
                 upper = mid
                 mid = math.ceil(upper / 2)
+        else:
+            lower = mid
+            mid = math.ceil((upper - mid) / 2) + mid
