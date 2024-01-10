@@ -6,4 +6,7 @@ def canConstruct(ransomNote, magazine):
     for char in ransomNote:
         count[char] += 1
         
-    
+    for char in magazine:
+        if count[char]:
+            count[char] -= 1
+            
