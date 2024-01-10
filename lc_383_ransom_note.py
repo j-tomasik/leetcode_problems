@@ -9,4 +9,5 @@ def canConstruct(ransomNote, magazine):
     for char in magazine:
         if count[char]:
             count[char] -= 1
-            
+    
+    return all(val == 0 for val in count.values())
