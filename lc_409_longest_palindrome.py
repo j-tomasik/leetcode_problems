@@ -6,6 +6,7 @@ def longestPalindrome(s):
         if set.has(char):
             count += 2
             set.remove(char)
-            
+        else:
+            set.add(char)
     
-    return count
+    return count + 1 if set.size > 0 else 0
