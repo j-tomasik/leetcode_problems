@@ -16,6 +16,8 @@ def maxSlidingWindow(nums, k):
             
         if (r + 1) >= k:
             output.append(nums[q[0]])
+            l += 1
+        r += 1
         
     
     return output
