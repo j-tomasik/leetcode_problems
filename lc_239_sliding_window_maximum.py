@@ -5,5 +5,10 @@ def maxSlidingWindow(nums, k):
     q = deque()
     l = r = 0
     
+    while r < len(nums):
+        #pop smaller values from q
+        
+        
+    
     return output
     
