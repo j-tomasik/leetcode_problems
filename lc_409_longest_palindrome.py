@@ -1,12 +1,12 @@
 def longestPalindrome(s):
-    set = set()
+    my_set = set()
     count = 0
     
     for char in s:
-        if set.has(char):
+        if char in my_set:
             count += 2
-            set.remove(char)
+            my_set.remove(char)
         else:
-            set.add(char)
+            my_set.add(char)
     
-    return count + 1 if set.size > 0 else 0
+    return count + (1 if len(set) > 0 else 0)
