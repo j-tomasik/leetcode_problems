@@ -11,7 +11,10 @@ def merge(intervals):
         if startInt <= currEnd:
             currEnd = endInt if endInt > currEnd else currEnd
         else:
-            
+            #append to output list
+            output.append([currStart, currEnd])
+            #reasign for next comparison
+            currStart, currEnd = startInt, endInt
     
-    
+    output.append([currStart, currEnd])
     return output
