@@ -10,6 +10,6 @@ def inorderTraversal(root):
         res.append(node.val)
         inorder(node.right)
         
-    
+    inorder(root)
     
     return res
