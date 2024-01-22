@@ -3,4 +3,8 @@ def reverseList(head):
     curr = head
     next = None
     
-    while
+    while curr:
+        next = curr.next
+        curr.next= prev
+        prev = curr
+        curr = next
