@@ -1,4 +1,4 @@
-def affBinary(a, b):
+def addBinary(a, b):
     s = []
     carry = 0
     i = len(a) - 1
@@ -23,3 +23,4 @@ def affBinary(a, b):
         carry //= 2
     
     return ''.join(reversed(s))
+
