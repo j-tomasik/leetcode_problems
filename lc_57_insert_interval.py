@@ -8,5 +8,11 @@ def insert(intervals, newInterval):
         if newInterval[1] < intervals[i][0]:
             res.append(newInterval)
             return res + intervals[i:]
+        
+            #if new start if AFTER curr end
+            #there is no overlap, append in curr
+            #and keep iterating to find overlap
+        elif newInterval[0] > intervals[i][1]:
+            res.append(intervals[i])
     
     return res
