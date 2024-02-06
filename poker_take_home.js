@@ -1,7 +1,7 @@
 
 const Poker = (() => {
 
-    const cardBaseURL = "https://raw.githubusercontent.com/uzair-ashraf/storage-bucket/master/cards/{suit}_{card}.png";
+    const cardBaseURL = "https:/cards/{suit}_{card}.png";
     const suits = ['spade', 'heart', 'diamond', 'club'];
     const cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
