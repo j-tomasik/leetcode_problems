@@ -1,7 +1,7 @@
 
 const Poker = (() => {
 
-    const cardBaseURL = "https:/cards/{suit}_{card}.png";
+    const cardBaseURL = "https://raw.githubusercontent.com/uzair-ashraf/storage-bucket/master/cards/{suit}_{card}.png";
     const suits = ['spade', 'heart', 'diamond', 'club'];
     const cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
@@ -22,6 +22,9 @@ const Poker = (() => {
       return randomIntIdx
     }
     
+    
+    
+    
     		//This function will take in a string for which hand to get cards from
     		//It will return a obj of key-values to count how many of each card are found in the hand
       const detectPairs = (handId) => {
@@ -29,15 +32,14 @@ const Poker = (() => {
         let cardCounts = {};
         
         cards.each(function() {
-        	let value = $(this).data('value')
-          console.log(value)
+        	let value = $(this).data('value').toString()
+          
           cardCounts[value] = (cardCounts[value] || 0) + 1
         });
         
         return cardCounts
       };
       
-
       
       	//This function takes in a string for which hand to apply styles to
         //It will use the detectPairs() to get a counter obj
@@ -53,7 +55,7 @@ const Poker = (() => {
         let first;
         
         cards.each(function() {
-        	let value = $(this).data('value');
+        	let value = $(this).data('value').toString();
           
           if (counts >= 2) {
           	if(!firstPairFound) {
@@ -75,14 +77,11 @@ const Poker = (() => {
         return counts
       };
       
-      
-    
     
 				//This function take in a string that is the HTML element ID for the given player's hand,
         //It will make a hand arr to pass into the pair count returning function,
         //It will also create the img elements and attach them to the correct section element 
         //with the corresponding handId String, after the h1 tag
-        
     const makeHand = (handId) => {
     
         for(let i = 0; i < 5; i++) {
@@ -127,21 +126,31 @@ const Poker = (() => {
     // *-* event methods *-*
 
     const eventPlayAgainClicked = () => {
-    		//grads DOM elements to append img elements to
+    			//remove 'winning' class from both hands to start over
+        $('#hand1, #hand2').removeClass('winning');
+    
+    			//grads DOM elements to append img elements to
     		let firstHand = $('#hand1');
         let secondHand = $('#hand2');
-        //removes prev card img for new game, does nothing if first playy
+        
+        	//removes prev card img for new game, does nothing if first playy
         firstHand.find('h1').nextAll('img').remove();
         secondHand.find('h1').nextAll('img').remove();
-              
+        
+        	//runs make hand to creates imgs for cards and returns int for num of pairs in hand
         let HandOneCount = makeHand('hand1')
         let HandTwoCount = makeHand('hand2')
- 
+        
         //if hand count is zero, run 90% odds, then need to change last card and change
         //class for the corresponding partner
         
-        //then figure out winner and apply winner style
         
+        	//asigns winning class based on count 
+        if (HandOneCount > HandTwoCount) {
+        	$('#hand1').addClass('winning')
+        } else if (HandOneCount < HandTwoCount) {
+        	$('#hand2').addClass('winning')
+        }
         
     };
 
