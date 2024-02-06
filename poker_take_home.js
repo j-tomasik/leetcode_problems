@@ -37,7 +37,7 @@ const Poker = (() => {
         return cardCounts
       };
       
-      const countPairs
+
       
       	//This function takes in a string for which hand to apply styles to
         //It will use the detectPairs() to get a counter obj
