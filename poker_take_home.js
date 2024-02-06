@@ -1,4 +1,3 @@
-
 const Poker = (() => {
 
     const cardBaseURL = "https://raw.githubusercontent.com/uzair-ashraf/storage-bucket/master/cards/{suit}_{card}.png";
@@ -12,6 +11,24 @@ const Poker = (() => {
     };
 
     // *-* utility methods *-*
+    
+    
+    	//This func will be called if no pair is found in a random hand
+      //Hard code changed first two to match, could refacor to randomize which are paired
+    const createPair = (handId) => {
+    		//grabs all cards for the given hand
+    	let cards = $(`#${handId} img`)
+      	//grabs card value and img src to transfer to second card
+      let firstVal = $(cards[0]).data('value').toString();
+      let firstSrc = $(cards[0]).attr('src');
+      	//sets second card to match first
+      $(cards[1]).attr('src', firstSrc)
+      $(cards[1]).data('value', firstVal)
+      	//Adds first pair class styling to both
+      $(cards[0]).addClass('pair0')
+      $(cards[1]).addClass('pair0')
+      
+    };
     
     	//This func will return a random int val for indexing into the suits and cards arrays
       //It takes the length of the array it is index into
@@ -57,7 +74,7 @@ const Poker = (() => {
         cards.each(function() {
         	let value = $(this).data('value').toString();
           
-          if (counts >= 2) {
+          if (counts[value] >= 2) {
           	if(!firstPairFound) {
             	$(this).addClass('pair0')
               first = value
@@ -67,7 +84,7 @@ const Poker = (() => {
             	$(this).addClass('pair0')
               firstPairComplete = true
               
-            } else if (secondPairCounter < 2) {
+            } else if (value !== first && secondPairCounter < 2) {
           		$(this).addClass('pair1')
               secondPairCounter += 1
             };    
@@ -140,10 +157,30 @@ const Poker = (() => {
         	//runs make hand to creates imgs for cards and returns int for num of pairs in hand
         let HandOneCount = makeHand('hand1')
         let HandTwoCount = makeHand('hand2')
+
+        //A five card hand has 50% of having a pair
+        //Rand generate num 0-4
+        //If I create a pair when the rand num is 0,1,2,3 but not 4 that
+        //represents an 80% chance to create a pair in the code below
         
-        //if hand count is zero, run 90% odds, then need to change last card and change
-        //class for the corresponding partner
+        //Now overall chance is 5/10 it has a pair by default and then out of the 
+        //remaining 5 times it doesnt, 4 of those 5 will be given a pair
         
+        if (HandOneCount === 0) {
+        	let chance = Math.floor(Math.random() * 5)
+          if (chance < 4) {
+          	createPair('hand1')
+            HandOneCount += 1
+          }
+        }
+        
+        if (HandTwoCount === 0) {
+        	let chance = Math.floor(Math.random() * 5)
+          if (chance < 4) {
+          	createPair('hand2')
+            HandTwoCount += 1
+          }
+        }
         
         	//asigns winning class based on count 
         if (HandOneCount > HandTwoCount) {
