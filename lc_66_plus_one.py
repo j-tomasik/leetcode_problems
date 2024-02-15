@@ -7,4 +7,8 @@ def plusOne(digits):
     if digits[lastIdx] != 9:
         digits[lastIdx] += 1
         return digits 
-    
+    else:
+        newList = digits[:-1]
+        carryOne = plusOne(newList)
+        carryOne.append(0)
+        return carryOne
