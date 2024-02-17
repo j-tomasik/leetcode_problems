@@ -1,4 +1,5 @@
 def countBits(n):
-    ans = []
+    dp = [0] * (n + 1)
+    offset = 1
     
-    return ans
+    return dp
