@@ -5,5 +5,5 @@ def countBits(n):
     for i in range(1, n + 1):
         if offset * 2 == i:
             offset = i
-    
+        dp[i] = 1 + dp[i - offset]
     return dp
