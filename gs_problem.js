@@ -1,3 +1,6 @@
+//I forget the prompt, but I think it is:
+//given an arr, sum up the vals that are adjacent to make a smaller arrr, then keep summing until one number
+
 function solution(A, R) {
     let res = 0;
     const map = {};
